@@ -80,197 +80,206 @@
                 70% { transform: scale(1); }
             }
         }
+
+         #letterPaper {
+             background-image: url('wp.jpg');
+             background-size: cover;
+             background-repeat: no-repeat;
+         }
+
     </style>
 </head>
 <body class="bg-gradient-to-br from-light to-secondary min-h-screen flex items-center justify-center p-4 overflow-x-hidden">
-    <!-- 音频元素 -->
-    <audio id="bgMusic" loop>
-        <source src="https://music.163.com/song/media/outer/url?id=1435344420.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-    </audio>
+<!-- 音频元素 -->
+<audio id="bgMusic" loop>
+    <source src="wpp.wav" type="audio/mpeg"> <!-- 替换为你的录音文件名 -->
+    您的浏览器不支持音频播放。
+</audio>
 
-    <div class="relative w-full max-w-4xl">
-        <!-- 背景装饰 -->
-        <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl filter -z-10 animate-pulse-slow"></div>
-        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl filter -z-10 animate-pulse-slow" style="animation-delay: -2s;"></div>
-        
-        <!-- 浮动装饰元素 -->
-        <div class="absolute top-1/4 left-1/4 w-12 h-12 bg-accent/20 rounded-full animate-float" style="animation-delay: -1s;"></div>
-        <div class="absolute bottom-1/3 right-1/5 w-8 h-8 bg-primary/20 rounded-full animate-float" style="animation-delay: -3s;"></div>
-        <div class="absolute top-1/3 right-1/4 w-10 h-10 bg-secondary/30 rounded-full animate-float" style="animation-delay: -2s;"></div>
+<div class="relative w-full max-w-4xl">
+    <!-- 背景装饰 -->
+    <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl filter -z-10 animate-pulse-slow"></div>
+    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl filter -z-10 animate-pulse-slow" style="animation-delay: -2s;"></div>
 
-        <!-- 互动信封 -->
-        <div id="envelopeContainer" class="relative w-full max-w-md mx-auto">
-            <!-- 信封底部 -->
-            <div class="bg-primary rounded-lg overflow-hidden envelope-shadow z-10 relative h-[400px] md:h-[500px]">
-                <!-- 信封盖 -->
-                <div id="envelopeFlap" class="absolute top-0 left-0 right-0 h-1/2 bg-primary/90 transform origin-top z-20 pointer-events-none">
-                    <div class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-primary/90 to-transparent rounded-b-lg"></div>
+    <!-- 浮动装饰元素 -->
+    <div class="absolute top-1/4 left-1/4 w-12 h-12 bg-accent/20 rounded-full animate-float" style="animation-delay: -1s;"></div>
+    <div class="absolute bottom-1/3 right-1/5 w-8 h-8 bg-primary/20 rounded-full animate-float" style="animation-delay: -3s;"></div>
+    <div class="absolute top-1/3 right-1/4 w-10 h-10 bg-secondary/30 rounded-full animate-float" style="animation-delay: -2s;"></div>
+
+    <!-- 互动信封 -->
+    <div id="envelopeContainer" class="relative w-full max-w-md mx-auto">
+        <!-- 信封底部 -->
+        <div class="bg-primary rounded-lg overflow-hidden envelope-shadow z-10 relative h-[400px] md:h-[500px]">
+            <!-- 信封盖 -->
+            <div id="envelopeFlap" class="absolute top-0 left-0 right-0 h-1/2 bg-primary/90 transform origin-top z-20 pointer-events-none">
+                <div class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-primary/90 to-transparent rounded-b-lg"></div>
+            </div>
+
+            <!-- 信封内部 -->
+            <div class="absolute inset-0 bg-white/20 rounded-lg overflow-hidden z-10"></div>
+
+            <!-- 信纸 -->
+            <div id="letterPaper" class="absolute bottom-0 left-4 right-4 bg-white/95 bg-gradient-to-br from-white to-light
+  bg-[url('bg-photo.jpg')] bg-cover bg-no-repeat
+  rounded-lg p-6 md:p-8 paper-shadow font-sans text-dark opacity-0">
+                <div class="text-center mb-6 opacity-0" id="letterTitle">
+                    <h2 class="text-2xl md:text-3xl font-bold text-accent mb-2 text-shadow">给亲爱的小厨</h2>
+                    <div class="w-16 h-1 bg-accent/50 mx-auto rounded-full"></div>
                 </div>
-                
-                <!-- 信封内部 -->
-                <div class="absolute inset-0 bg-white/20 rounded-lg overflow-hidden z-10"></div>
-                
-                <!-- 信纸 -->
-                <div id="letterPaper" class="absolute bottom-0 left-4 right-4 bg-white/95 bg-gradient-to-br from-white to-light rounded-lg p-6 md:p-8 paper-shadow font-sans text-dark opacity-0">
-                    <div class="text-center mb-6 opacity-0" id="letterTitle">
-                        <h2 class="text-2xl md:text-3xl font-bold text-accent mb-2 text-shadow">给亲爱的小厨</h2>
-                        <div class="w-16 h-1 bg-accent/50 mx-auto rounded-full"></div>
-                    </div>
-                    
-                    <div class="mb-8 opacity-0" id="letterContent">
-                        <p class="text-muted leading-relaxed mb-4 text-center">
-                        </p>
-                        <p class="text-muted leading-relaxed text-center">
-                            文轩航迹感谢每一位为轩轩文文和小哪里努力奋斗的小厨，纵使前路艰险，我们有爱就不怕！
-                        </p>
-                    </div>
-                    
-                    <div class="mt-8 text-right text-accent opacity-0" id="letterSignature">
-                        <p class="font-medium">—— 文轩航迹</p>
-                    </div>
-                    
-                    <!-- 装饰性爱心 -->
-                    <div class="absolute top-4 right-4 text-accent/60 opacity-0" id="heartDecoration">
-                        <i class="fa fa-heart text-xl heart-beat"></i>
-                    </div>
+
+                <div class="mb-8 opacity-0" id="letterContent">
+                    <p class="text-muted leading-relaxed mb-4 text-center">
+                    </p>
+                    <p class="leading-relaxed text-center text-white">
+                        文轩航迹感谢每一位为轩轩文文和小哪里努力奋斗的小厨，纵使前路艰险，我们有爱就不怕！
+                    </p>
                 </div>
-                
-                <!-- 信封开口提示 -->
-                <div id="openHint" class="absolute inset-0 flex items-center justify-center z-30 cursor-pointer">
-                    <div class="text-center p-6 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105">
-                        <p class="text-accent font-medium mb-2">点击开启</p>
-                        <i class="fa fa-hand-pointer-o text-accent animate-bounce"></i>
-                    </div>
+
+                <div class="mt-8 text-right text-accent opacity-0" id="letterSignature">
+                    <p class="font-medium">—— 文轩航迹</p>
+                </div>
+
+                <!-- 装饰性爱心 -->
+                <div class="absolute top-4 right-4 text-accent/60 opacity-0" id="heartDecoration">
+                    <i class="fa fa-heart text-xl heart-beat"></i>
+                </div>
+            </div>
+
+            <!-- 信封开口提示 -->
+            <div id="openHint" class="absolute inset-0 flex items-center justify-center z-30 cursor-pointer">
+                <div class="text-center p-6 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105">
+                    <p class="text-accent font-medium mb-2">点击开启</p>
+                    <i class="fa fa-heart text-accent animate-bounce"></i>
                 </div>
             </div>
         </div>
-
-        <!-- 音乐控制 -->
-        <div class="fixed bottom-4 right-4 bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg z-50 transition-all duration-300 hover:bg-white hover:scale-110">
-            <button id="musicToggle" class="text-primary hover:text-accent transition-colors">
-                <i class="fa fa-volume-up text-xl"></i>
-            </button>
-        </div>
-        
-        <!-- 全屏控制 -->
-        <div class="fixed bottom-4 left-4 bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg z-50 transition-all duration-300 hover:bg-white hover:scale-110">
-            <button id="fullscreenToggle" class="text-primary hover:text-accent transition-colors">
-                <i class="fa fa-expand text-xl"></i>
-            </button>
-        </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const musicToggle = document.getElementById('musicToggle');
-            const bgMusic = document.getElementById('bgMusic');
-            const fullscreenToggle = document.getElementById('fullscreenToggle');
-            const envelopeContainer = document.getElementById('envelopeContainer');
-            const envelopeFlap = document.getElementById('envelopeFlap');
-            const letterPaper = document.getElementById('letterPaper');
-            const openHint = document.getElementById('openHint');
-            const letterTitle = document.getElementById('letterTitle');
-            const letterContent = document.getElementById('letterContent');
-            const letterSignature = document.getElementById('letterSignature');
-            const heartDecoration = document.getElementById('heartDecoration');
-            
-            let isMusicPlaying = false;
-            let isEnvelopeOpen = false;
-            
-            // 音乐控制
-            function toggleMusic() {
-                isMusicPlaying = !isMusicPlaying;
-                
-                if (isMusicPlaying) {
-                    bgMusic.play().catch(e => {
-                        console.error("播放失败:", e);
-                        isMusicPlaying = false;
-                        musicToggle.innerHTML = '<i class="fa fa-volume-off text-xl"></i>';
-                    });
-                    musicToggle.innerHTML = '<i class="fa fa-volume-up text-xl"></i>';
-                } else {
-                    bgMusic.pause();
+    <!-- 音乐控制 -->
+    <div class="fixed bottom-4 right-4 bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg z-50 transition-all duration-300 hover:bg-white hover:scale-110">
+        <button id="musicToggle" class="text-primary hover:text-accent transition-colors">
+            <i class="fa fa-volume-up text-xl"></i>
+        </button>
+    </div>
+
+    <!-- 全屏控制 -->
+    <div class="fixed bottom-4 left-4 bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg z-50 transition-all duration-300 hover:bg-white hover:scale-110">
+        <button id="fullscreenToggle" class="text-primary hover:text-accent transition-colors">
+            <i class="fa fa-expand text-xl"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        const fullscreenToggle = document.getElementById('fullscreenToggle');
+        const envelopeContainer = document.getElementById('envelopeContainer');
+        const envelopeFlap = document.getElementById('envelopeFlap');
+        const letterPaper = document.getElementById('letterPaper');
+        const openHint = document.getElementById('openHint');
+        const letterTitle = document.getElementById('letterTitle');
+        const letterContent = document.getElementById('letterContent');
+        const letterSignature = document.getElementById('letterSignature');
+        const heartDecoration = document.getElementById('heartDecoration');
+
+        let isMusicPlaying = false;
+        let isEnvelopeOpen = false;
+
+        // 音乐控制
+        function toggleMusic() {
+            isMusicPlaying = !isMusicPlaying;
+
+            if (isMusicPlaying) {
+                bgMusic.play().catch(e => {
+                    console.error("播放失败:", e);
+                    isMusicPlaying = false;
                     musicToggle.innerHTML = '<i class="fa fa-volume-off text-xl"></i>';
+                });
+                musicToggle.innerHTML = '<i class="fa fa-volume-up text-xl"></i>';
+            } else {
+                bgMusic.pause();
+                musicToggle.innerHTML = '<i class="fa fa-volume-off text-xl"></i>';
+            }
+        }
+
+        // 全屏控制
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`全屏请求错误: ${err.message}`);
+                });
+                fullscreenToggle.innerHTML = '<i class="fa fa-compress text-xl"></i>';
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                    fullscreenToggle.innerHTML = '<i class="fa fa-expand text-xl"></i>';
                 }
             }
-            
-            // 全屏控制
-            function toggleFullscreen() {
-                if (!document.fullscreenElement) {
-                    document.documentElement.requestFullscreen().catch(err => {
-                        console.error(`全屏请求错误: ${err.message}`);
-                    });
-                    fullscreenToggle.innerHTML = '<i class="fa fa-compress text-xl"></i>';
-                } else {
-                    if (document.exitFullscreen) {
-                        document.exitFullscreen();
-                        fullscreenToggle.innerHTML = '<i class="fa fa-expand text-xl"></i>';
-                    }
-                }
-            }
-            
-            // 打开信封
-            function openEnvelope() {
-                if (isEnvelopeOpen) return;
-                
-                isEnvelopeOpen = true;
-                openHint.style.display = 'none';
-                
-                // 播放信封打开动画
-                envelopeFlap.classList.add('animate-open-envelope');
-                
-                // 延迟后显示信纸
+        }
+
+        // 打开信封
+        function openEnvelope() {
+            if (isEnvelopeOpen) return;
+
+            isEnvelopeOpen = true;
+            openHint.style.display = 'none';
+
+            // 播放信封打开动画
+            envelopeFlap.classList.add('animate-open-envelope');
+
+            // 延迟后显示信纸
+            setTimeout(() => {
+                letterPaper.classList.add('animate-paper-enter');
+
+                // 显示信纸内容
                 setTimeout(() => {
-                    letterPaper.classList.add('animate-paper-enter');
-                    
-                    // 显示信纸内容
+                    letterTitle.style.opacity = '1';
+                    letterTitle.classList.add('animate-fade-in');
+
                     setTimeout(() => {
-                        letterTitle.style.opacity = '1';
-                        letterTitle.classList.add('animate-fade-in');
-                        
+                        letterContent.style.opacity = '1';
+                        letterContent.classList.add('animate-fade-in');
+
                         setTimeout(() => {
-                            letterContent.style.opacity = '1';
-                            letterContent.classList.add('animate-fade-in');
-                            
+                            letterSignature.style.opacity = '1';
+                            letterSignature.classList.add('animate-fade-in');
+
                             setTimeout(() => {
-                                letterSignature.style.opacity = '1';
-                                letterSignature.classList.add('animate-fade-in');
-                                
-                                setTimeout(() => {
-                                    heartDecoration.style.opacity = '1';
-                                    heartDecoration.classList.add('animate-fade-in');
-                                }, 500);
-                            }, 600);
+                                heartDecoration.style.opacity = '1';
+                                heartDecoration.classList.add('animate-fade-in');
+                            }, 500);
                         }, 600);
-                    }, 800);
+                    }, 600);
                 }, 800);
+            }, 800);
+        }
+
+        // 检测用户交互，自动播放音乐
+        function tryPlayMusic() {
+            if (!isMusicPlaying) {
+                toggleMusic();
             }
-            
-            // 检测用户交互，自动播放音乐
-            function tryPlayMusic() {
-                if (!isMusicPlaying) {
-                    toggleMusic();
-                }
-                document.removeEventListener('mousedown', tryPlayMusic);
-                document.removeEventListener('keydown', tryPlayMusic);
-            }
-            
-            // 事件监听
-            musicToggle.addEventListener('click', toggleMusic);
-            fullscreenToggle.addEventListener('click', toggleFullscreen);
-            envelopeContainer.addEventListener('click', openEnvelope);
-            
-            document.addEventListener('mousedown', tryPlayMusic);
-            document.addEventListener('keydown', tryPlayMusic);
-            
-            // 监听全屏状态变化
-            document.addEventListener('fullscreenchange', () => {
-                fullscreenToggle.innerHTML = document.fullscreenElement ? 
-                    '<i class="fa fa-compress text-xl"></i>' : 
-                    '<i class="fa fa-expand text-xl"></i>';
-            });
+            document.removeEventListener('mousedown', tryPlayMusic);
+            document.removeEventListener('keydown', tryPlayMusic);
+        }
+
+        // 事件监听
+        musicToggle.addEventListener('click', toggleMusic);
+        fullscreenToggle.addEventListener('click', toggleFullscreen);
+        envelopeContainer.addEventListener('click', openEnvelope);
+
+        document.addEventListener('mousedown', tryPlayMusic);
+        document.addEventListener('keydown', tryPlayMusic);
+
+        // 监听全屏状态变化
+        document.addEventListener('fullscreenchange', () => {
+            fullscreenToggle.innerHTML = document.fullscreenElement ?
+                '<i class="fa fa-compress text-xl"></i>' :
+                '<i class="fa fa-expand text-xl"></i>';
         });
-    </script>
+    });
+</script>
 </body>
-</html>    
+</html>
